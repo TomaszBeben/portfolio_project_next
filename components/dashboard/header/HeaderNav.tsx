@@ -15,8 +15,8 @@ import {
   MenuItem,
   MenuList,
   FormControl,
-  FormLabel,
   Switch,
+  Select,
 } from '@chakra-ui/react';
 import {
   FiMenu,
@@ -42,11 +42,11 @@ const MobileNav = ({ onOpen }: MobileProps) => {
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
     >
-      <FormControl display='flex' alignItems='center'>
-      <FiSun/>
+      {/* <FormControl display='flex' alignItems='center'>
+        <FiSun />
         <Switch onChange={toggleColorMode} />
-        <FiMoon/>
-      </FormControl>
+        <FiMoon />
+      </FormControl> */}
       <IconButton
         display={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
@@ -97,6 +97,13 @@ const MobileNav = ({ onOpen }: MobileProps) => {
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
+              <MenuItem closeOnSelect={false}>
+                <FormControl display='flex' alignItems='center'>
+                  <FiSun />
+                  <Switch onChange={toggleColorMode} />
+                  <FiMoon />
+                </FormControl>
+              </MenuItem>
               <MenuDivider />
               <MenuItem>Sign out</MenuItem>
             </MenuList>

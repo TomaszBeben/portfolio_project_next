@@ -11,6 +11,7 @@ interface LinkItemProps {
   name: string;
   icon: IconType;
 }
+
 export const LinkItems: Array<LinkItemProps> = [
   { name: 'Home', icon: FiHome },
   { name: 'Trending', icon: FiTrendingUp },

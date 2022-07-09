@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, FC } from 'react';
 import HeaderNav from './header/HeaderNav'
 import Sidebar from './sidebar/Sidebar'
 import {
@@ -9,11 +9,11 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
-export default function SidebarWithHeader({
-  children,
-}: {
-  children: ReactNode;
-}) {
+type Props = {
+  children:  ReactNode;
+}
+
+const SidebarWithHeader: FC<Props> = ({children}) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -41,3 +41,5 @@ export default function SidebarWithHeader({
     </Box>
   );
 }
+
+export default SidebarWithHeader;

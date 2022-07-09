@@ -1,3 +1,4 @@
+import { ReactNode } from 'react';
 import {
   Flex,
   Icon,
@@ -5,14 +6,13 @@ import {
   FlexProps,
 } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
-import { ReactNode } from 'react';
 
 interface NavItemProps extends FlexProps {
   icon: IconType;
   children: ReactNode
 }
 
-export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
+export const NavItem = ({ icon, children}: NavItemProps) => {
   return (
     <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
@@ -25,8 +25,7 @@ export const NavItem = ({ icon, children, ...rest }: NavItemProps) => {
         _hover={{
           bg: 'cyan.400',
           color: 'white',
-        }}
-        {...rest}>
+        }}>
         {icon && (
           <Icon
             mr="4"
