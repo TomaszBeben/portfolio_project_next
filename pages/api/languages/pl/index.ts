@@ -1,11 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { polish_sidebar } from './polish'
-import { IconType } from 'react-icons';
 
 type Data = {
   name: string;
-  icon: IconType;
+  route: string;
 }
 
 export default function handler(

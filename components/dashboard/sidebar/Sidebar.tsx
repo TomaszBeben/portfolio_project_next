@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react';
+import { LanguageContext } from '../../../context/LanguageContext';
+
 import { NavItem } from './NavItem';
 import { LinkItems } from '../../utils/linksItems';
 
@@ -14,7 +17,20 @@ interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
 
+interface LinkItemProps {
+  name: string;
+  route: string
+}
+
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
+  const [language, setLanguage] = useState<Array<LinkItemProps>>(LinkItems)
+
+  useEffect(()=>{
+    fetch('http://localhost:3000/api/languages/pl')
+    .then(res=>res.json())
+    .then(data => setLanguage(data))
+  })
+
   return (
     <Box
       transition="3s ease"
@@ -31,8 +47,8 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+      {language && language.map((link) => (
+        <NavItem key={link.name} route={link.route}>
           {link.name}
         </NavItem>
       ))}

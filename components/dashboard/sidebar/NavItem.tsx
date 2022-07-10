@@ -5,16 +5,15 @@ import {
   Link,
   FlexProps,
 } from '@chakra-ui/react';
-import { IconType } from 'react-icons';
 
 interface NavItemProps extends FlexProps {
-  icon: IconType;
-  children: ReactNode
+  children: ReactNode;
+  route: string;
 }
 
-export const NavItem = ({ icon, children}: NavItemProps) => {
+export const NavItem = ({ children, route}: NavItemProps) => {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href={route} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -26,16 +25,6 @@ export const NavItem = ({ icon, children}: NavItemProps) => {
           bg: 'cyan.400',
           color: 'white',
         }}>
-        {icon && (
-          <Icon
-            mr="4"
-            fontSize="16"
-            _groupHover={{
-              color: 'white',
-            }}
-            as={icon}
-          />
-        )}
         {children}
       </Flex>
     </Link>
