@@ -5,7 +5,7 @@ type Data = {
 
 export const english_sidebar: Array<Data> = [
   { name: 'Home', route:'/' },
-  { name: 'About App', route:'/app' },
+  { name: 'About App', route:'/aboutapp' },
   { name: 'About Me', route:'/about' },
   { name: 'Friends', route:'/friends'},
   { name: 'Settings', route:'settings' },

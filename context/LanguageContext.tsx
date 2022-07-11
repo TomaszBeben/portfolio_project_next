@@ -1,21 +1,17 @@
-import { createContext, useContext, useState, ReactNode, FC } from 'react';
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
-const AppContext = createContext<string>('');
-
-type Props = {
-  children:  ReactNode;
+type TLanguageContext = {
+  languageRoute: string;
+  setLanguageRoute: Dispatch<SetStateAction<string>> | null
 }
 
-export const LanguageContext: FC<Props> = ({ children }) => {
-  const [languageApi, setLanguageApi] = useState<string>('http://localhost:3000/api/languages/pl')
-
-  return (
-    <AppContext.Provider value={languageApi}>
-      {children}
-    </AppContext.Provider>
-  );
+const languageContextDefaultValue: TLanguageContext = {
+  languageRoute: 'http://localhost:3000/api/languages/pl',
+  setLanguageRoute: null
 }
 
-export function useAppContext() {
-  return useContext(AppContext);
+export const LanguageContext = createContext<TLanguageContext>(languageContextDefaultValue)
+
+export const useLanguage = () => {
+  return useContext(LanguageContext)
 }

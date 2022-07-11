@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { LanguageContext } from '../../../context/LanguageContext';
 
 import { NavItem } from './NavItem';
 import { LinkItems } from '../../utils/linksItems';
@@ -25,6 +24,7 @@ interface LinkItemProps {
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
   const [language, setLanguage] = useState<Array<LinkItemProps>>(LinkItems)
 
+  
   useEffect(()=>{
     fetch('http://localhost:3000/api/languages/pl')
     .then(res=>res.json())
