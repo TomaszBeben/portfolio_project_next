@@ -1,8 +1,7 @@
 import { ReactNode } from 'react';
+import Link from 'next/link'
 import {
   Flex,
-  Icon,
-  Link,
   FlexProps,
 } from '@chakra-ui/react';
 
@@ -13,7 +12,7 @@ interface NavItemProps extends FlexProps {
 
 export const NavItem = ({ children, route}: NavItemProps) => {
   return (
-    <Link href={route} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href={route} style={{ textDecoration: 'none' }}>
       <Flex
         align="center"
         p="4"

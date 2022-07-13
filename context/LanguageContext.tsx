@@ -1,6 +1,6 @@
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
-type TLanguageContext = {
+export type TLanguageContext = {
   languageRoute: string;
   setLanguageRoute: Dispatch<SetStateAction<string>> | null
 }

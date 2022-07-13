@@ -16,20 +16,7 @@ interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
 
-interface LinkItemProps {
-  name: string;
-  route: string
-}
-
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-  const [language, setLanguage] = useState<Array<LinkItemProps>>(LinkItems)
-
-  
-  useEffect(()=>{
-    fetch('http://localhost:3000/api/languages/pl')
-    .then(res=>res.json())
-    .then(data => setLanguage(data))
-  })
 
   return (
     <Box
@@ -47,7 +34,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {language && language.map((link) => (
+      {LinkItems.map((link) => (
         <NavItem key={link.name} route={link.route}>
           {link.name}
         </NavItem>

@@ -4,9 +4,9 @@ interface LinkItemProps {
 }
 
 export const LinkItems: Array<LinkItemProps> = [
-  { name: 'Home', route:'/' },
-  { name: 'Trending', route:'Trending' },
-  { name: 'Explore', route: 'Explore' },
-  { name: 'Favourites', route: 'Favourites' },
-  { name: 'Settings', route: 'settings' },
+  { name: 'Strona Domowa', route:'/' },
+  { name: 'O Aplikacji', route:'/aboutapp' },
+  { name: 'O mnie', route:'/about' },
+  { name: 'Znajomi', route:'/friends'},
+  { name: 'Ustawienia', route:'/settings' },
 ];
