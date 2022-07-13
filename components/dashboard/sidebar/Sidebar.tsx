@@ -27,6 +27,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
       w={{ base: 'full', md: 60 }}
       pos="fixed"
       h="full"
+      onClick={onClose}
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">

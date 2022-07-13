@@ -1,8 +1,12 @@
+import  {useLanguage}  from "../context/languageContext"
+
 const Setting = () => {
+  const {test, setTest} = useLanguage()
+  console.log(test);
 
   return (
     <>
-    settings
+    <button onClick={()=> setTest && setTest('działa?')}>dziala?</button>
     </>
   )
 }

@@ -1,16 +1,17 @@
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 
-export type TLanguageContext = {
-  languageRoute: string;
-  setLanguageRoute: Dispatch<SetStateAction<string>> | null
+export type Tvalue = {
+  test: string,
+  setTest: ((arg: string) => void) | null,
 }
 
-const languageContextDefaultValue: TLanguageContext = {
-  languageRoute: 'http://localhost:3000/api/languages/pl',
-  setLanguageRoute: null
+
+const languageContextDefaultValue: Tvalue = {
+  test: '',
+  setTest: null
 }
 
-export const LanguageContext = createContext<TLanguageContext>(languageContextDefaultValue)
+export const LanguageContext = createContext<Tvalue>(languageContextDefaultValue)
 
 export const useLanguage = () => {
   return useContext(LanguageContext)
