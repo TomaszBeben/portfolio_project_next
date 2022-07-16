@@ -1,14 +1,17 @@
-import { createContext, Dispatch, SetStateAction, useContext } from "react";
+import { createContext, useContext, Dispatch, SetStateAction } from "react";
+import { languageApiType } from "../types/languageApiType";
 
 export type Tvalue = {
-  test: string,
-  setTest: ((arg: string) => void) | null,
+  languageObj: languageApiType,
+  setLanguageObj?: Dispatch<SetStateAction<Tvalue | undefined>>
 }
 
-
 const languageContextDefaultValue: Tvalue = {
-  test: '',
-  setTest: null
+  languageObj: {
+    name: '',
+    route: ''
+  },
+  setLanguageObj: () => {},
 }
 
 export const LanguageContext = createContext<Tvalue>(languageContextDefaultValue)

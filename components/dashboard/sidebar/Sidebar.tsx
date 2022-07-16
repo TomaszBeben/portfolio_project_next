@@ -1,5 +1,3 @@
-import { useState, useEffect } from 'react';
-
 import { NavItem } from './NavItem';
 import { LinkItems } from '../../utils/linksItems';
 

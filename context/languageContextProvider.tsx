@@ -1,28 +1,25 @@
-import { ReactNode, useState } from "react"
-import {LanguageContext}  from './languageContext'
+import { ReactNode, useState, useEffect } from "react"
+import { LanguageContext } from './languageContext'
+import { fetchLanguageData } from './fetchLanguageData'
+import { Tvalue } from "./languageContext"
 
 type Props = {
   children: ReactNode
 }
 
-type Tvalue = {
-  test: string,
-  setTest: ((arg: string) => void) | null,
-}
+export const LanguageProvider = ({ children }: Props) => {
+ const [languageObj, setLanguageObj] = useState<any>()
+ console.log(languageObj);
 
+ useEffect(() => {
+  fetchLanguageData( 'http://localhost:3000/api/languages/pl', setLanguageObj)
+ },[])
 
-export const LanguageProvider = ({children}: Props) => {
-const [test, setTest] = useState<string>('test')
-  const value: Tvalue= {
-    test,
-    setTest
-  }
-
-  return(
+  return (
     <>
-    <LanguageContext.Provider value={value}>
-      {children}
-    </LanguageContext.Provider>
+      <LanguageContext.Provider value={{languageObj, setLanguageObj}}>
+        {children}
+      </LanguageContext.Provider>
     </>
   )
 }
