@@ -1,23 +1,24 @@
 import { ReactNode, useState, useEffect } from "react"
 import { LanguageContext } from './languageContext'
 import { fetchLanguageData } from './fetchLanguageData'
-import { Tvalue } from "./languageContext"
 
 type Props = {
   children: ReactNode
 }
 
 export const LanguageProvider = ({ children }: Props) => {
- const [languageObj, setLanguageObj] = useState<any>()
- console.log(languageObj);
+
+  const [languagePath, setLanguagePath] = useState<string> ('http://localhost:3000/api/languages/pl')
+  const [languageObj, setLanguageObj] = useState<any> ()
+  console.log(languagePath);
 
  useEffect(() => {
-  fetchLanguageData( 'http://localhost:3000/api/languages/pl', setLanguageObj)
- },[])
+  fetchLanguageData( languagePath, setLanguageObj)
+ },[languagePath])
 
   return (
     <>
-      <LanguageContext.Provider value={{languageObj, setLanguageObj}}>
+      <LanguageContext.Provider value={{languageObj, setLanguageObj, setLanguagePath}}>
         {children}
       </LanguageContext.Provider>
     </>

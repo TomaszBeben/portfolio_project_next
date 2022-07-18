@@ -1,9 +1,6 @@
-type Data = {
-  name: string;
-  route: string;
-}
+import { languageApiType } from "../../../../types/languageApiType"
 
-export const polish_sidebar: Array<Data> = [
+export const polish_sidebar: languageApiType = [
   { name: 'Strona Domowa', route:'/' },
   { name: 'O Aplikacji', route:'/content/aboutapp' },
   { name: 'O mnie', route:'/content/about' },
