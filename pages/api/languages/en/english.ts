@@ -1,6 +1,6 @@
 import { languageApiType } from "../../../../types/languageApiType"
 
-export const english_sidebar: Array<languageApiType> = [
+export const english_sidebar: languageApiType = [
   { name: 'Home', route:'/' },
   { name: 'About App', route:'/aboutapp' },
   { name: 'About Me', route:'/about' },

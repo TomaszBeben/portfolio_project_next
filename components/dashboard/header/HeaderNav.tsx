@@ -16,7 +16,6 @@ import {
   MenuList,
   FormControl,
   Switch,
-  Select,
   MenuOptionGroup,
 } from '@chakra-ui/react';
 import {
@@ -25,7 +24,7 @@ import {
   FiSun,
   FiMoon,
 } from 'react-icons/fi';
-import LanguageSelect from './languageSelect';
+import LanguageSelect from './LanguageSelect';
 
 interface MobileProps extends FlexProps {
   onOpen: () => void;

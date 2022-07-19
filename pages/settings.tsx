@@ -1,26 +1,31 @@
-import { useState } from "react";
-import { useLanguage } from "../context/language/languageContext"
-import { languageApiType } from "../types/languageApiType";
-
-const urlPL: string = 'http://localhost:3000/api/languages/pl'
-const urlEN: string = 'http://localhost:3000/api/languages/en'
+import LanguageSelect from "../components/dashboard/header/LanguageSelect"
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box,
+} from '@chakra-ui/react'
 
 const Setting = () => {
-  const { languageObj, setLanguagePath } = useLanguage()
-  const [language, setLanguage] = useState<string>(urlPL)
-  console.log();
-
   return (
     <>
-      <button onClick={() => setLanguagePath && setLanguagePath(urlPL)}>EN</button>
-      <div></div>
-      <button onClick={() => console.log(languageObj)}>log</button>
-      <div></div>
-      {languageObj.map((e) => {
-        return(
-          <div key={e.route} >{e.name}</div>
-        )
-      })}
+      <Accordion>
+        <AccordionItem>
+          <h1>
+            <AccordionButton>
+              <Box flex='1' textAlign='left'>
+                Language
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h1>
+          <AccordionPanel pb={4}>
+            <LanguageSelect />
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
     </>
   )
 }

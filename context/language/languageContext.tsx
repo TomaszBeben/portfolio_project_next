@@ -3,16 +3,18 @@ import { languageApiType } from "../../types/languageApiType";
 
 export type Tvalue = {
   languageObj: languageApiType,
-  setLanguageObj?: Dispatch<SetStateAction<Tvalue | undefined>>,
+  setLanguageObj?: Dispatch<SetStateAction<languageApiType>>,
+  languagePath: string,
   setLanguagePath?: Dispatch<SetStateAction<string>>,
 }
 
 const languageContextDefaultValue: Tvalue = {
-  languageObj: {
+  languageObj: [{
     name: '',
     route: ''
-  },
-  setLanguageObj: () => {},
+  }],
+  languagePath: 'http://localhost:3000/api/languages/pl',
+  setLanguageObj: () => Object,
   setLanguagePath: () => ''
 }
 

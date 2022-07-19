@@ -1,4 +1,4 @@
-export type languageApiType = {
+export type languageApiType = Array<{
   name: string;
   route: string;
-}[]
+}>

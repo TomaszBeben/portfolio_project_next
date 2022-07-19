@@ -1,5 +1,6 @@
 import { NavItem } from './NavItem';
 import { LinkItems } from '../../utils/linksItems';
+import { useLanguage } from '../../../context/language/languageContext';
 
 import {
   Box,
@@ -15,7 +16,7 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
-
+ const { languageObj } = useLanguage()
   return (
     <Box
       transition="3s ease"
@@ -33,7 +34,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {LinkItems.map((link) => (
+      {languageObj && languageObj.map((link) => (
         <NavItem key={link.name} route={link.route}>
           {link.name}
         </NavItem>

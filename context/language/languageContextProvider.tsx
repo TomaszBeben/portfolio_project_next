@@ -10,7 +10,6 @@ export const LanguageProvider = ({ children }: Props) => {
 
   const [languagePath, setLanguagePath] = useState<string> ('http://localhost:3000/api/languages/pl')
   const [languageObj, setLanguageObj] = useState<any> ()
-  console.log(languagePath);
 
  useEffect(() => {
   fetchLanguageData( languagePath, setLanguageObj)
@@ -18,7 +17,7 @@ export const LanguageProvider = ({ children }: Props) => {
 
   return (
     <>
-      <LanguageContext.Provider value={{languageObj, setLanguageObj, setLanguagePath}}>
+      <LanguageContext.Provider value={{languageObj, setLanguageObj, languagePath, setLanguagePath}}>
         {children}
       </LanguageContext.Provider>
     </>
