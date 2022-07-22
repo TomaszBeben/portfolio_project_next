@@ -1,15 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { english_sidebar } from './english'
+import { english_language } from './english'
+import { languageApiType } from '../../../../types/languageApiType';
 
-type Data = {
-  name: string;
-  route: string;
-}
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<languageApiType>
 ) {
-  res.status(200).json(english_sidebar)
+  res.status(200).json(english_language)
 }

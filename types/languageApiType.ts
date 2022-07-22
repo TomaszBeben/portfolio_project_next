@@ -1,4 +1,5 @@
-export type languageApiType = Array<{
-  name: string;
-  route: string;
-}>
+export type languageApiType = {
+  sidebar:Array <{
+    name: string,
+}>,
+}

@@ -1,12 +1,11 @@
-interface LinkItemProps {
-  name: string;
-  route: string
-}
+import { languageApiType } from "../../types/languageApiType";
 
-export const LinkItems: Array<LinkItemProps> = [
-  { name: 'Strona Domowa', route:'/' },
-  { name: 'O Aplikacji', route:'/aboutapp' },
-  { name: 'O mnie', route:'/about' },
-  { name: 'Znajomi', route:'/friends'},
-  { name: 'Ustawienia', route:'/settings' },
-];
+export const LinkItems: languageApiType = {
+  sidebar:[
+    { name: 'Strona Domowa', route:'/' },
+    { name: 'O Aplikacji', route:'/aboutapp' },
+    { name: 'O mnie', route:'/about' },
+    { name: 'Znajomi', route:'/friends'},
+    { name: 'Ustawienia', route:'/settings' },
+  ],
+}

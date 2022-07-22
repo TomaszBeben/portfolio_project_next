@@ -1,9 +1,11 @@
 import { languageApiType } from "../../../../types/languageApiType"
 
-export const polish_sidebar: languageApiType = [
-  { name: 'Strona Domowa', route:'/' },
-  { name: 'O Aplikacji', route:'/aboutapp' },
-  { name: 'O mnie', route:'/about' },
-  { name: 'Znajomi', route:'/friends'},
-  { name: 'Ustawienia', route:'/settings' },
-]
+export const polish_language: languageApiType = {
+  sidebar:[
+    { name: 'Strona Domowa' },
+    { name: 'O Aplikacji' },
+    { name: 'O mnie' },
+    { name: 'Znajomi' },
+    { name: 'Ustawienia' },
+  ],
+}

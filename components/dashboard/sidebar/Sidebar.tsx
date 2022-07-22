@@ -1,7 +1,3 @@
-import { NavItem } from './NavItem';
-import { LinkItems } from '../../utils/linksItems';
-import { useLanguage } from '../../../context/language/languageContext';
-
 import {
   Box,
   CloseButton,
@@ -10,13 +6,14 @@ import {
   Text,
   BoxProps,
 } from '@chakra-ui/react';
+import NavItems from './NavItems';
 
 interface SidebarProps extends BoxProps {
   onClose: () => void;
 }
 
 const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
- const { languageObj } = useLanguage()
+
   return (
     <Box
       transition="3s ease"
@@ -34,11 +31,7 @@ const SidebarContent = ({ onClose, ...rest }: SidebarProps) => {
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
-      {languageObj && languageObj.map((link) => (
-        <NavItem key={link.name} route={link.route}>
-          {link.name}
-        </NavItem>
-      ))}
+      <NavItems/>
     </Box>
   );
 };

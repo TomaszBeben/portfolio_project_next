@@ -9,10 +9,11 @@ export type Tvalue = {
 }
 
 const languageContextDefaultValue: Tvalue = {
-  languageObj: [{
-    name: '',
-    route: ''
-  }],
+  languageObj: {
+    sidebar: [
+      {name: ''}
+    ]
+  },
   languagePath: 'http://localhost:3000/api/languages/pl',
   setLanguageObj: () => Object,
   setLanguagePath: () => ''
