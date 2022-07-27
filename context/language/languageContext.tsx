@@ -3,9 +3,9 @@ import { languageApiType } from "../../types/languageApiType";
 
 export type Tvalue = {
   languageObj: languageApiType,
-  setLanguageObj?: Dispatch<SetStateAction<languageApiType>>,
+  setLanguageObj: Dispatch<SetStateAction<languageApiType>>,
   languagePath: string,
-  setLanguagePath?: Dispatch<SetStateAction<string>>,
+  setLanguagePath: Dispatch<SetStateAction<string>>,
 }
 
 const languageContextDefaultValue: Tvalue = {

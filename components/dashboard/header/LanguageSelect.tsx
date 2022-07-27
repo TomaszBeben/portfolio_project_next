@@ -9,7 +9,7 @@ const LanguageSelect = () => {
   const {  setLanguagePath, languagePath } = useLanguage()
   return (
     <>
-    <Select placeholder='Language' value={languagePath} onChange={(e) => setLanguagePath && setLanguagePath(e.target.value)}>
+    <Select value={languagePath} onChange={(e) => setLanguagePath(e.target.value)}>
       <option value={PlPath}>PL</option>
       <option value={EnPath}>EN</option>
     </Select>

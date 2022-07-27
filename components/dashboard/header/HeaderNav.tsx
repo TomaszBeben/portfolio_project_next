@@ -43,11 +43,6 @@ const MobileNav = ({ onOpen }: MobileProps) => {
       borderBottomColor={useColorModeValue('gray.200', 'gray.700')}
       justifyContent={{ base: 'space-between', md: 'flex-end' }}
     >
-      {/* <FormControl display='flex' alignItems='center'>
-        <FiSun />
-        <Switch onChange={toggleColorMode} />
-        <FiMoon />
-      </FormControl> */}
       <IconButton
         display={{ base: 'flex', md: 'none' }}
         onClick={onOpen}
@@ -68,8 +63,7 @@ const MobileNav = ({ onOpen }: MobileProps) => {
           <Menu>
             <MenuButton
               py={2}
-              transition="all 0.3s"
-              _focus={{ boxShadow: 'none' }}>
+              transition="all 0.3s">
               <HStack>
                 <Avatar
                   size={'sm'}
@@ -82,7 +76,9 @@ const MobileNav = ({ onOpen }: MobileProps) => {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">User Name</Text>
+                  <Text fontSize="sm">
+                    User Name
+                  </Text>
                   <Text fontSize="xs" color="gray.600">
                     Role
                   </Text>
