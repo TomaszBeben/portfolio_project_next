@@ -12,18 +12,24 @@ const NavItems = () => {
         <NavItem route='/'>
           {sidebar[0].name}
         </NavItem>
-        <NavItem route='/aboutapp'>
+        <NavItem route='/shareboard'>
           {sidebar[1].name}
         </NavItem>
-        <NavItem route='/about'>
+        <NavItem route='/cvapp'>
           {sidebar[2].name}
         </NavItem>
-        <Spacer />
-        <NavItem route='friends'>
+        <NavItem route='communicator'>
           {sidebar[3].name}
         </NavItem>
+        <Spacer />
         <NavItem route='settings'>
           {sidebar[4].name}
+        </NavItem>
+        <NavItem route='aboutapp'>
+          {sidebar[5].name}
+        </NavItem>
+        <NavItem route='/aboutme'>
+          {sidebar[6].name}
         </NavItem>
       </Flex>
     </>

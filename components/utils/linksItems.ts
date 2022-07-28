@@ -2,10 +2,12 @@ import { languageApiType } from "../../types/languageApiType";
 
 export const LinkItems: languageApiType = {
   sidebar:[
-    { name: 'Strona Domowa', route:'/' },
-    { name: 'O Aplikacji', route:'/aboutapp' },
-    { name: 'O mnie', route:'/about' },
-    { name: 'Znajomi', route:'/friends'},
-    { name: 'Ustawienia', route:'/settings' },
+    { name: 'Strona Domowa' },
+    { name: 'Share App' },
+    { name: 'CV App' },
+    { name: 'Message App'},
+    { name: 'Ustawienia' },
+    { name: 'O Aplikacji' },
+    { name: 'O mnie' },
   ],
 }

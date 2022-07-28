@@ -1,5 +1,3 @@
 export type languageApiType = {
-  sidebar:Array <{
-    name: string,
-}>,
+  sidebar: Array <{ name: string }>,
 }
