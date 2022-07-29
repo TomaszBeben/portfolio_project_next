@@ -13,7 +13,9 @@ import {
   Avatar,
   FormControl,
   FormHelperText,
-  InputRightElement
+  InputRightElement,
+  useColorModeValue,
+  useColorMode,
 } from "@chakra-ui/react";
 import { FaUserAlt, FaLock } from "react-icons/fa";
 
@@ -21,6 +23,7 @@ const CFaUserAlt = chakra(FaUserAlt);
 const CFaLock = chakra(FaLock);
 
 const Login = () => {
+  const { toggleColorMode } = useColorMode()
   const [showPassword, setShowPassword] = useState<boolean> (false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
@@ -30,7 +33,7 @@ const Login = () => {
       flexDirection="column"
       width="100wh"
       height="100vh"
-      backgroundColor="gray.200"
+      backgroundColor={useColorModeValue('gray.100', 'gray.900')}
       justifyContent="center"
       alignItems="center"
     >
@@ -41,7 +44,7 @@ const Login = () => {
         alignItems="center"
       >
         <Avatar bg="teal.500" />
-        <Heading color="teal.400">Welcome</Heading>
+        <Heading color={useColorModeValue('gray.900', 'gray.100')}>Welcome</Heading>
         <Box minW={{ base: "90%", md: "468px" }}>
           <form>
             <Stack
@@ -51,33 +54,32 @@ const Login = () => {
               boxShadow="md"
             >
               <FormControl>
-                <InputGroup>
+                <InputGroup bg={useColorModeValue('gray.100', 'gray.900')}>
                   <InputLeftElement
                     pointerEvents="none">
-                    <CFaUserAlt color="gray.300" />
+                    <CFaUserAlt/>
                   </InputLeftElement>
-                  <Input type="email" placeholder="email address" />
+                  <Input type="email" placeholder="email address"  />
                 </InputGroup>
               </FormControl>
               <FormControl>
-                <InputGroup>
+                <InputGroup bg={useColorModeValue('gray.100', 'gray.900')}>
                   <InputLeftElement
-                    pointerEvents="none"
-                    color="gray.300">
-                    <CFaLock color="gray.300" />
+                    pointerEvents="none">
+                    <CFaLock />
                   </InputLeftElement>
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Password"
                   />
                   <InputRightElement width="4.5rem">
-                    <Button h="1.75rem" size="sm" onClick={handleShowClick}>
+                    <Button h="1.75rem" size="sm" onClick={handleShowClick} bg={useColorModeValue('gray.100', 'gray.900')} >
                       {showPassword ? "Hide" : "Show"}
                     </Button>
                   </InputRightElement>
                 </InputGroup>
                 <FormHelperText textAlign="right">
-                  <Link>forgot password?</Link>
+                  <Link color='gray.900'>forgot password?</Link>
                 </FormHelperText>
               </FormControl>
               <Button
@@ -88,6 +90,9 @@ const Login = () => {
                 width="full"
               >
                 Login
+              </Button>
+              <Button onClick={toggleColorMode}>
+                COLOR
               </Button>
             </Stack>
           </form>
